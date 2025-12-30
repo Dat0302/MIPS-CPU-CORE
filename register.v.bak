@@ -1,0 +1,15 @@
+module register
+(
+	input clk;
+	input rst;
+	input q;
+	output reg d;
+);
+	always @(posedge clk or negedge rst) begin
+		if(~rst) begin 
+			q<= {32{1'b0}};
+		end else 
+			q <=d;
+		end
+endmodule
+	
